@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace = "layouts :: header"></head>
+
+<body>
+<nav th:replace = "layouts :: navbar"> </nav>
+<!--<div class="container">-->
+<!--    <form th:action="@{/cloth/women/save}" method="POST" th:object="${womenForm}">-->
+
+<!--        <input type="text" placeholder="Cloth Model" th:field="${womenForm.model_name}">-->
+<!--        <input type="text" placeholder="Cloth Color" th:field="${womenForm.color}">-->
+<!--        <input type="text" placeholder="Cloth Size" th:field="${womenForm.size}">-->
+<!--        <input type="text" placeholder="Cloth Price" th:field="${womenForm.price}">-->
+<!--        <input type="text" placeholder="Cloth Description" th:field="${womenForm.description}">-->
+
+<!--        <button type="submit">submit</button>-->
+
+<!--    </form>-->
+<!--</div>-->
+<div class="container">
+    <br>
+    <h3>Add New Cloths</h3>
+    <br>
+    <form th:action="@{/cloth/women/save}" method="POST" th:object="${womenForm}">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Cloth Model</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" th:field="${womenForm.model_name}">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Cloth Color</label>
+            <input type="text" class="form-control" id="exampleFormControlInput3" th:field="${womenForm.color}">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Cloth Size</label>
+            <input type="number" class="form-control" id="exampleFormControlInput4" th:field="${womenForm.size}">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Cloth Price</label>
+            <input type="number" class="form-control" id="exampleFormControlInput5" th:field="${womenForm.price}">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Cloth Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="${womenForm.description}"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">submit</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

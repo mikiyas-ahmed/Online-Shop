@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "layouts :: header"></head>
+
+<body>
+<nav th:replace = "layouts :: navbar"> </nav>
+<div class="container">
+    <h4> Cloths </h4>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th> Model</th>
+            <th> Color </th>
+            <th> Size </th>
+            <th> price </th>
+            <th> Description </th>
+            <th> Detail </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cloth: ${womenClothList} ">
+            <td th:text="${cloth.model_name}" >
+            <td th:text="${cloth.color}" >
+            <td th:text="${cloth.size}" >
+            <td th:text="${cloth.price}" >
+            <td th:text="${cloth.description}" >
+            <td><a th:href="@{'/cloth/women/' + ${cloth.womenClothId}}" class="btn btn-primary btn-sm mb-3">view</a></td>
+        </tr>
+        <tr th:each="cloth: ${menClothList} ">
+            <td th:text="${cloth.model_name}" >
+            <td th:text="${cloth.color}" >
+            <td th:text="${cloth.size}" >
+            <td th:text="${cloth.price}" >
+            <td th:text="${cloth.description}" >
+            <td><a th:href="@{'/cloth/men/'+ ${cloth.menClothId}}" class="btn btn-primary btn-sm mb-3">view</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>
